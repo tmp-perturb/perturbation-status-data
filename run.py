@@ -27,8 +27,7 @@ def main() -> None:
     parser.add_argument("--mixscale_config", required=True)
     parser.add_argument("--ps_input_config", required=True)
     parser.add_argument("--ps_run_config", required=True)
-    parser.add_argument("--baseline_config", required=True)
-    parser.add_argument("--benchmark_config", required=True)
+    parser.add_argument("--target_expression_config", required=True)
     args = parser.parse_args()
 
     output = Path(args.output_dir)
@@ -44,8 +43,7 @@ def main() -> None:
             "mixscale_config": args.mixscale_config,
             "ps_input_config": args.ps_input_config,
             "ps_run_config": args.ps_run_config,
-            "baseline_config": args.baseline_config,
-            "benchmark_config": args.benchmark_config,
+            "target_expression_config": args.target_expression_config,
         }.items()
     }
     missing = [value for value in paths.values() if not Path(value).exists()]
